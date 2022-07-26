@@ -36,11 +36,13 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
+      <div class="fields">
         <div class="field">
           <input class="field__input" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}">
           <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
         </div>
+      </div>
+      <div class="fields">
         <div class="field field--with-error">
           <input
             autocomplete="email"
@@ -70,6 +72,10 @@
       <div class="field">
         <input type="tel" id="ContactForm-phone" class="field__input" autocomplete="tel" name="contact[{{ 'templates.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="{{ 'templates.contact.form.phone' | t }}">
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+      </div>
+      <div class="field">
+        <input type="text" id="ContactForm-subject" class="field__input" name="contact[お問い合わせのタイトル]" placeholder="お問い合わせタイトル">
+        <label class="field__label" for="ContactForm-subject">{{ 'お問い合わせのタイトル' }}</label>
       </div>
       <div class="field">
         <textarea
